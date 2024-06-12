@@ -1,0 +1,89 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import EmailSVG from "../../public/email.svg?raw";
+---
+
+<Layout title="Portfolio">
+  <Navbar />
+
+  <main class="bg-black flex flex-col items-center py-16">
+    <div class="w-2/3 flex flex-col items-center">
+      <img class="w-28 sm:w-56" src="./avatar.png" alt="Avatar" />
+      <div>
+        <h2
+          class="font-extrabold text-center text-4xl sm:text-5xl md:text-6xl text-white"
+        >
+          <span> I ❤️ code </span>
+          <br />
+          <span>Just a Full Stack</span>
+          <span class="primary-gradient"> Dev</span>
+        </h2>
+        <p class="text-gray-400 text-center mt-10 mb-5">
+          I am a seasoned full-stack software engineer with over 8 years of
+          professional experience, specializing in backend development. My
+          expertise lies in crafting robust and scalable SaaS-based
+          architectures on the Amazon AWS platform.
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <button class="bg-gray-200" type="button">Get in Touch</button>
+
+        <button
+          class="border-gray-200 border-2 hover:text-white text-gray-200"
+          type="button">Download CV</button
+        >
+      </div>
+
+      <div class="space-y-5 my-10">
+        <p
+          class="text-gray-400 text-center md:text-xl font-semibold tracking-[12%]"
+        >
+          Experience With
+        </p>
+        <img src="./skillsets.png" alt="Skillsets" />
+      </div>
+
+      <div class="w-full space-y-4 py-4">
+        <h2
+          class="orange-gradient text-2xl md:text-4xl font-extrabold text-center"
+        >
+          PROJECTS
+        </h2>
+
+        <div class="overflow-x-scroll">
+          <div class="w-auto whitespace-nowrap">
+            {
+              new Array(10)
+                .fill(0)
+                .map((_, idx) => (
+                  <div class="w-72 h-60 from-[#FF8660] to-[#D5491D] bg-gradient-to-tr inline-block" />
+                ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <footer class="w-full my-5 md:my-10">
+        <h2 class="font-bold text-white text-2xl">Contact</h2>
+        <p class="text-gray-400 mt-5 mb-2">
+          Seasoned Full Stack Software Engineer with over 8 years of hands-on
+          experience in designing and implementing robust, scalable, and
+          innovative web solutions. Adept at leveraging a comprehensive skill
+          set encompassing front-end and back-end technologies
+        </p>
+
+        <a
+          class="flex items-center gap-2 text-white"
+          href="mailto:shahilyadav47@gmail.com"
+        >
+          <span>
+            <Fragment set:html={EmailSVG} />
+          </span>
+          <span class="w-full break-words"> shahilyadav47@gmail.com </span>
+        </a>
+      </footer>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-jakarta">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    button {
+      @apply text-xs sm:text-xl px-6 py-3 font-semibold rounded-full;
+    }
+  }
+
+  @layer components {
+    .primary-gradient {
+      @apply text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] to-[#9A33FF];
+    }
+
+    .orange-gradient {
+      @apply text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] to-[#D5491D];
+    }
+  }
+</style>
