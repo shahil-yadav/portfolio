@@ -1,5 +1,97 @@
 ---
+import EmailSVG from "../../public/email.svg?raw";
+import Card from "../components/index/Project-Card.astro";
+import Experience from "../components/index/Experience.astro";
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro." />
+<Layout title="Portfolio">
+  <Navbar />
+
+  <main class="flex flex-col items-center bg-black py-16">
+    <div class="flex w-2/3 flex-col items-center">
+      <img class="w-28 sm:w-56" src="./avatar.png" alt="Avatar" />
+      <div>
+        <h2
+          class="text-center text-4xl font-extrabold text-white sm:text-5xl md:text-6xl"
+        >
+          <span> I ❤️ code </span>
+          <br />
+          <span>Just a Full Stack</span>
+          <span class="primary-gradient"> Dev</span>
+        </h2>
+        <p class="mb-5 mt-10 text-center text-gray-400">
+          I am a seasoned full-stack software engineer with over 8 years of
+          professional experience, specializing in backend development. My
+          expertise lies in crafting robust and scalable SaaS-based
+          architectures on the Amazon AWS platform.
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <button class="bg-gray-200" type="button">Get in Touch</button>
+
+        <button
+          class="border-2 border-gray-200 text-gray-200 hover:text-white"
+          type="button">Download CV</button
+        >
+      </div>
+
+      <div class="my-10 space-y-5">
+        <p
+          class="text-center font-semibold tracking-[12%] text-gray-400 md:text-xl"
+        >
+          Experience With
+        </p>
+        <img src="./skillsets.png" alt="Skillsets" />
+      </div>
+
+      <div class="w-full space-y-4 py-4">
+        <h2
+          class="orange-gradient text-center text-2xl font-extrabold md:text-4xl"
+        >
+          PROJECTS
+        </h2>
+
+        <div class="overflow-x-scroll">
+          <div class="w-auto whitespace-nowrap">
+            <Card
+              href="https://stunes.vercel.app"
+              imageLink="stunes.png"
+              title="Stunes"
+            />
+
+            <Card
+              href="https://snippets-sharer-fea54.firebaseapp.com"
+              imageLink="snippets-sharer.png"
+              title="Snippets Sharer"
+            />
+          </div>
+        </div>
+      </div>
+
+      <Experience />
+
+      <footer class="my-5 w-full md:my-10">
+        <h2 class="text-2xl font-bold text-white">Contact</h2>
+        <p class="mb-2 mt-5 text-gray-400">
+          Seasoned Full Stack Software Engineer with over 8 years of hands-on
+          experience in designing and implementing robust, scalable, and
+          innovative web solutions. Adept at leveraging a comprehensive skill
+          set encompassing front-end and back-end technologies
+        </p>
+
+        <a
+          class="flex items-center gap-2 text-white"
+          href="mailto:shahilyadav47@gmail.com"
+        >
+          <span>
+            <Fragment set:html={EmailSVG} />
+          </span>
+          <span class="w-full break-words"> shahilyadav47@gmail.com </span>
+        </a>
+      </footer>
+    </div>
+  </main>
+</Layout>

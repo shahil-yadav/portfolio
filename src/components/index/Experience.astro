@@ -1,0 +1,38 @@
+---
+import Wyvate from "../../../public/wyvate.svg?raw";
+---
+
+<h2 class="blue-gradient font-extrabold">Experience</h2>
+<div class="my-5 w-full text-white">
+  <div>
+    <div class="md:flex md:items-end md:justify-between">
+      <div class="flex items-center gap-4">
+        <Fragment set:html={Wyvate} />
+        <h3 class="text-xl font-bold">Tech Intern at Wywate</h3>
+      </div>
+      <span class="text-xs text-gray-400">June 2024 - Present</span>
+    </div>
+    <ul class="mx-5 mt-3 list-disc font-[consolas]">
+      <li>
+        Led a comprehensive refactoring initiative to improve code quality and
+        performance
+      </li>
+      <li>
+        Implemented derived states and custom hooks to reduce state variable
+        overuse and enhance reusability
+      </li>
+      <li>
+        Eliminated prop drilling by restructuring component hierarchy, improving
+        independence and testability
+      </li>
+      <li>
+        Migrated business logic to Redux, establishing a single source of truth
+        and enhancing code readability
+      </li>
+      <li>
+        Optimized render performance through efficient state management and
+        component design
+      </li>
+    </ul>
+  </div>
+</div>

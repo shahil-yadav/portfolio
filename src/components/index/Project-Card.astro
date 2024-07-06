@@ -1,0 +1,25 @@
+---
+interface Props {
+  imageLink: string;
+  imgAltText?: string;
+  title: string;
+  href: string;
+}
+
+const { imageLink, imgAltText, title, href } = Astro.props;
+---
+
+<div class="inline-block h-60 w-72">
+  <a
+    href={href}
+    class="flex h-full flex-col justify-around rounded-xl bg-stone-700"
+  >
+    <img class="h-[190px] w-full" src={imageLink} alt={imgAltText} />
+    <div class="mx-3">
+      <span class="text-xs text-gray-300"> Click here to visit </span>
+      <p class="font-bold text-white">{title}</p>
+    </div>
+  </a>
+</div>
+
+<div class="inline-block w-3"></div>
