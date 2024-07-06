@@ -8,6 +8,7 @@ export default {
       },
       fontFamily: {
         jakarta: ["Plus Jakarta Sans", "sans-serif"],
+        consolas: ["Source Code Pro", "monospace"],
       },
     },
   },
