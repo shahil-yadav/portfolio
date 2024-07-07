@@ -10,18 +10,16 @@ const imagesName = [
   "git.png",
   "react-native.png",
   "java.png",
-  "	redis.png",
+  "redis.png",
   "jest.png",
   "redux.png",
   "nextjs.png"
 ]
 
-const images = imagesName
-  .map((image) => location + image)
-  .map((image) => ({
-    id: crypto.randomUUID(),
-    image
-  }))
+const images = imagesName.map((image) => ({
+  id: crypto.randomUUID(),
+  image: location + image
+}))
 ---
 
 <style is:global>
