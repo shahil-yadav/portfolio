@@ -1,0 +1,67 @@
+---
+import { Banner } from "../ui/Banner"
+
+const location = "portfolio/png/skills/"
+const imagesName = [
+  "c++.png",
+  "nosql.png",
+  "docker.png",
+  "python.png",
+  "git.png",
+  "react-native.png",
+  "java.png",
+  "	redis.png",
+  "jest.png",
+  "redux.png",
+  "nextjs.png"
+]
+
+const images = imagesName
+  .map((image) => location + image)
+  .map((image) => ({
+    id: crypto.randomUUID(),
+    image
+  }))
+---
+
+<style is:global>
+  img {
+    max-width: fit-content;
+    height: 5rem;
+    padding: 0 15px;
+    object-fit: cover;
+  }
+
+  img:last-of-type {
+    padding-left: 0;
+  }
+
+  .inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 5rem;
+  }
+
+  .wrapper {
+    position: absolute;
+    display: flex;
+  }
+
+  section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+  }
+
+  @keyframes swipe {
+    0% {
+      transform: translate(0);
+    }
+
+    100% {
+      transform: translate(-100%);
+    }
+  }
+</style>
+
+<Banner images={images} speed={15000} />

@@ -1,9 +1,10 @@
 ---
-import EmailSVG from "../../public/email.svg?raw";
-import Card from "../components/index/Project-Card.astro";
-import Experience from "../components/index/Experience.astro";
-import Navbar from "../components/Navbar.astro";
-import Layout from "../layouts/Layout.astro";
+import EmailSVG from "../assets/svg/email.svg?raw"
+import Card from "../components/index/Project-Card.astro"
+import Experience from "../components/index/Experience.astro"
+import Navbar from "../components/shared/Navbar.astro"
+import Layout from "../layouts/Layout.astro"
+import Skills from "../components/index/Skills.astro"
 ---
 
 <Layout title="Portfolio">
@@ -11,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
 
   <main class="flex flex-col items-center bg-black py-16">
     <div class="flex w-2/3 flex-col items-center">
-      <img class="w-28 sm:w-56" src="./avatar.png" alt="Avatar" />
+      <img class="w-28 sm:w-56" src="/portfolio/png/avatar.png" alt="Avatar" />
       <div>
         <h2
           class="text-center text-4xl font-extrabold text-white sm:text-5xl md:text-6xl"
@@ -38,13 +39,9 @@ import Layout from "../layouts/Layout.astro";
         >
       </div>
 
-      <div class="my-10 space-y-5">
-        <p
-          class="text-center font-semibold tracking-[12%] text-gray-400 md:text-xl"
-        >
-          Experience With
-        </p>
-        <img src="./skillsets.png" alt="Skillsets" />
+      <div class="my-10 w-full space-y-5">
+        <h2 class="blue-gradient text-center font-extrabold">Skills in</h2>
+        <Skills />
       </div>
 
       <div class="w-full space-y-4 py-4">
@@ -58,13 +55,13 @@ import Layout from "../layouts/Layout.astro";
           <div class="w-auto whitespace-nowrap">
             <Card
               href="https://stunes.vercel.app"
-              imageLink="stunes.png"
+              imageLink="portfolio/png/stunes.png"
               title="Stunes"
             />
 
             <Card
               href="https://snippets-sharer-fea54.firebaseapp.com"
-              imageLink="snippets-sharer.png"
+              imageLink="portfolio/png/snippets-sharer.png"
               title="Snippets Sharer"
             />
           </div>

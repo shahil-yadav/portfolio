@@ -7,4 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [react(), tailwind()],
   site: "https://shahil-yadav.github.io",
+  base: "/portfolio",
 });
